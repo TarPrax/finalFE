@@ -1,17 +1,22 @@
 import { useState } from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser, removeUser } from "../../Utilis/Slices/Slice";
+
 const Login = () => {
   const [emailId, setEmailId] = useState("rajat@gmail.com");
   const [password, setPassword] = useState("Rajat@123");
-
+  const dispatch = useDispatch();
   const handelLogin = async (e) => {
     e.preventDefault();
     console.log("hit");
     try {
-      const res = await axios.post("https://zrr976-1234.csb.app/login", {
+      const res = await axios.post("https://zrr976-7336.csb.app/login", {
         emailId,
         password,
       });
+      console.log(res.data);
+      dispatch(addUser(res.data));
     } catch (err) {
       console.error(err);
     }
