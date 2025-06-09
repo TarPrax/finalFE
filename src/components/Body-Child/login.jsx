@@ -2,10 +2,12 @@ import { useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../../Utilis/Slices/Slice";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [emailId, setEmailId] = useState("rajat@gmail.com");
-  const [password, setPassword] = useState("Rajat@123");
+const navigate =useNavigate()
+  const [emailId, setEmailId] = useState("test@gmail.com");
+  const [password, setPassword] = useState("Test@123");
   const dispatch = useDispatch();
   const handelLogin = async (e) => {
     e.preventDefault();
@@ -15,8 +17,10 @@ const Login = () => {
         emailId,
         password,
       });
+    
       console.log(res.data);
       dispatch(addUser(res.data));
+      return navigate("/");
     } catch (err) {
       console.error(err);
     }

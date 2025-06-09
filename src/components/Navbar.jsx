@@ -1,4 +1,9 @@
+import { useSelector } from "react-redux";
+import store from "../Utilis/Store";
 const Navbar = () => {
+const user = useSelector((store)=>store.user)
+console.log(user?.currentUser?.firstName);
+
   return (
     <>
       <div className="navbar bg-base-100 shadow-sm ">
@@ -10,6 +15,8 @@ const Navbar = () => {
             alt="Tailwind CSS Navbar component"
             src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
           />
+          {user && user.currentUser && <p>{user.currentUser.firstName}</p>}
+
         </div>
 
 
