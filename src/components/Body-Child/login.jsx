@@ -20,7 +20,7 @@ const navigate =useNavigate()
     
       console.log(res.data);
       dispatch(addUser(res.data));
-      return navigate("/");
+      return navigate("/feed");
     } catch (err) {
       console.error(err);
     }
