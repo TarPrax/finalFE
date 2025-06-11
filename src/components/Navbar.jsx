@@ -16,7 +16,7 @@ console.log(user?.currentUser?.firstName);
             src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
           />
           {user && user.currentUser && <p>{user.currentUser.firstName}</p>}
-
+          
         </div>
 
 

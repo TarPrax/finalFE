@@ -16,7 +16,7 @@ const navigate =useNavigate()
       const res = await axios.post("http://localhost:4336/login", {
         emailId,
         password,
-      });
+      },{withCredentials: true});
     
       console.log(res.data);
       dispatch(addUser(res.data));
