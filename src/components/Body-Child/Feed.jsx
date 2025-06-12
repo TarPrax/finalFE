@@ -23,12 +23,13 @@ const Feed = () => {
     };
 
     fetchUser();
-  }, [currentUser, dispatch]);
+  }, []);
 
   const name = currentUser?.firstName;
 
   return (
     <>
+    
       <div>Feed</div>
       <h1>Welcome, {name || 'Guest'}!</h1>
       <p>This is your feed where you can see all the latest updates.</p>
