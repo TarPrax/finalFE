@@ -9,6 +9,7 @@ import ErrorP from "./error.jsx";
 import { Provider } from "react-redux";
 import Body from "./components/Body.jsx";
 import store from "./Utilis/Store.jsx";
+import Feed from "./components/Body-Child/Feed.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
         path: "about",
         element: <About />,
       },
+      {
+        path: "/feed",
+        element: <Feed />,
+      }
     ],
     errorElement: <ErrorP />,
   },
