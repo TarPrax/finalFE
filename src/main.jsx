@@ -10,10 +10,14 @@ import { Provider } from "react-redux";
 import Body from "./components/Body.jsx";
 import store from "./Utilis/Store.jsx";
 import Feed from "./components/Body-Child/Feed.jsx";
+import Requests from "./components/Body-Child/requests.jsx";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
+  { path:" ",
+    element:<Body/>,
+    errorElement: <ErrorP />},
+
+   { path: "/",
     element: <Body />,
     children: [
       {
@@ -27,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/feed",
         element: <Feed />,
+      },
+      {
+        path:"/requests",
+        element: <Requests/>,
       }
     ],
     errorElement: <ErrorP />,
