@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const FeedComponent = ({firstName,lastName,emailId}) => {
+const FeedComponent = ({firstName,lastName,emailId,_id}) => {
+
+console.log(_id)
+
   return ( 
     <div className="feed-item bg-base-200 p-4 rounded-lg shadow-md mb-4 w-100">
         <img
@@ -10,10 +13,11 @@ const FeedComponent = ({firstName,lastName,emailId}) => {
     <h2>{firstName} {lastName} Here !!</h2>
     <h3>Email: {emailId}</h3>
     <button className="btn btn-primary" >Connect</button>
-    <button className="btn btn-secondary ml-2">Ignore</button>
+    <button className="btn btn-secondary ml-2" >Ignore</button>
     <div className="feed-item-actions mt-4">
-      <button className="btn btn-sm btn-outline">View Profile</button>
+      <button className="btn btn-sm btn-outline" >View Profile</button>
       <button className="btn btn-sm btn-outline ml-2">Message</button>  
+      
     </div>
     </div>
   )

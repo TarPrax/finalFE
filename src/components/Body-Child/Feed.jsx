@@ -38,7 +38,7 @@ const feed = async () => {
     });
     // console.log('Feed data:', response?.data?.data);
     setFeedData(response.data.data);
-    console.log('Feed data type:', feedData);
+    
     // console.log(typeof response.data.data[0].firstName);
   } catch (error) {
     console.error('Error fetching feed:', error); }
@@ -63,11 +63,16 @@ const feed = async () => {
   <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full p-4'>
   {feedData.length > 0 ? (
     feedData.map((item, index) => (
+   
       <div key={index} className="feed-item flex flex-col items-center bg-base-200 p-4 rounded-lg shadow-md mb-4 w-100 justify-center">
+       
         <FeedComponent
           firstName={item.firstName}
           lastName={item.lastName}
-          emailId={item.emailId}  />
+          emailId={item.emailId} 
+            _id={item._id} />
+            {console.log(item._id)}
+            {console.log(item.firstName)}
       </div>
     ))
   ) : (
