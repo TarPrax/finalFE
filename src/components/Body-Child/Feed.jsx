@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { addUser } from '../../Utilis/Slices/Slice';
 import FeedComponent from './feedComponent';
+import RequestComponent from './requestComponent';
 
 
 const Feed = () => {
@@ -36,7 +37,7 @@ const feed = async () => {
     const response = await axios.get('http://localhost:4336/user/connections', {
       withCredentials: true,
     });
-    // console.log('Feed data:', response?.data?.data);
+    console.log('Feed data:', response?.data?.data);
     setFeedData(response.data.data);
     
     // console.log(typeof response.data.data[0].firstName);
@@ -66,13 +67,12 @@ const feed = async () => {
    
       <div key={index} className="feed-item flex flex-col items-center bg-base-200 p-4 rounded-lg shadow-md mb-4 w-100 justify-center">
        
-        <FeedComponent
+        <RequestComponent
           firstName={item.firstName}
           lastName={item.lastName}
           emailId={item.emailId} 
             _id={item._id} />
-            {console.log(item._id)}
-            {console.log(item.firstName)}
+            
       </div>
     ))
   ) : (

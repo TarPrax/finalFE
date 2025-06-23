@@ -33,7 +33,8 @@ useEffect(() => {
         <FeedComponent
           firstName={item.firstName}
           lastName={item.lastName}
-          emailId={item.emailId}  />
+          emailId={item.emailId}
+          _id={item._id}  />
       </div>
         ))}
       </div>

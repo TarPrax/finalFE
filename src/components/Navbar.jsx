@@ -70,7 +70,7 @@ const Navbar = () => {
                 }}
                 className="block w-full px-4 py-2 text-left hover:bg-gray-700 hover:text-blue-400"
               >
-                Feed
+                Connections
               </button>
               <button
                 onClick={() => {
@@ -79,8 +79,19 @@ const Navbar = () => {
                 }}
                 className="block w-full px-4 py-2 text-left hover:bg-gray-700 hover:text-blue-400"
               >
-                Requests
+                Feed
               </button>
+
+<button
+                onClick={() => {
+                  setDropdownOpen(false);
+                  navigate("/review");
+                }}
+                className="block w-full px-4 py-2 text-left hover:bg-gray-700 hover:text-blue-400"
+              >
+                Review
+              </button>
+
               <button
                 onClick={() => {
                   setDropdownOpen(false);

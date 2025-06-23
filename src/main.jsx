@@ -11,6 +11,7 @@ import Body from "./components/Body.jsx";
 import store from "./Utilis/Store.jsx";
 import Feed from "./components/Body-Child/Feed.jsx";
 import Requests from "./components/Body-Child/requests.jsx";
+import Review from "./components/Body-Child/Review.jsx";
 
 const router = createBrowserRouter([
   { path:" ",
@@ -35,6 +36,9 @@ const router = createBrowserRouter([
       {
         path:"/requests",
         element: <Requests/>,
+      },{
+        path:"/review",
+        element: <Review />,
       }
     ],
     errorElement: <ErrorP />,

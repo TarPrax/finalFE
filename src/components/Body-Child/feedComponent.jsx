@@ -1,6 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const FeedComponent = ({firstName,lastName,emailId,_id}) => {
+
+const [Message, setMessage] = useState(''); 
+  async function handleConn(status){
+  
+const user = await axios.post(`http://localhost:4336/newConnectionRequest/${status}/${_id}`,{},
+  {withCredentials: true})
+console.log(user);
+setMessage(status);
+
+  }
+  
 
 console.log(_id)
 
@@ -12,13 +24,20 @@ console.log(_id)
           className="w-16 h-16 rounded-full mb-4"   />
     <h2>{firstName} {lastName} Here !!</h2>
     <h3>Email: {emailId}</h3>
-    <button className="btn btn-primary" >Connect</button>
-    <button className="btn btn-secondary ml-2" >Ignore</button>
+    <button className="btn btn-primary" onClick={()=>handleConn('interested')}>Interested</button>
+    <button className="btn btn-secondary ml-2" onClick={()=>handleConn('ignored')}>Ignored</button>
     <div className="feed-item-actions mt-4">
       <button className="btn btn-sm btn-outline" >View Profile</button>
       <button className="btn btn-sm btn-outline ml-2">Message</button>  
       
     </div>
+    {Message && (
+        <div className="toast toast-top toast-center">
+          <div className="alert alert-info">
+            <span> Successfully {Message} the {firstName} </span>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
