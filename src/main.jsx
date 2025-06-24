@@ -12,6 +12,9 @@ import store from "./Utilis/Store.jsx";
 import Feed from "./components/Body-Child/Feed.jsx";
 import Requests from "./components/Body-Child/requests.jsx";
 import Review from "./components/Body-Child/Review.jsx";
+import Signup from "./components/Body-Child/Signup.jsx";
+import UserEdit from "./components/Body-Child/UserEdit.jsx";
+import Test from "./components/Body-Child/Test.jsx";
 
 const router = createBrowserRouter([
   { path:" ",
@@ -39,7 +42,16 @@ const router = createBrowserRouter([
       },{
         path:"/review",
         element: <Review />,
-      }
+      },
+      {
+        path:"/signup",
+        element: <Signup/>},
+        {path:"user/edit",
+          element:<UserEdit/>
+        },
+        {path:"/test",
+          element:<Test/>
+        }
     ],
     errorElement: <ErrorP />,
   },

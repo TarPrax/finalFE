@@ -27,9 +27,11 @@ const Navbar = () => {
   };
 
   const user = useSelector((store) => store.user);
-  console.log(user?.currentUser?.firstName);
+  
+  
 
   // Close dropdown if clicked outside
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -46,7 +48,7 @@ const Navbar = () => {
         <div className="flex-1">
           <a className="btn btn-ghost text-xl m-5">DevTinder🤖</a>
         </div>
-
+<button className="btn btn-ghost btn-sm m-2" onClick={() => navigate("/test")}>Test</button>
         {user?.currentUser?.firstName ? (
           <button className="btn btn-ghost btn-sm m-2" onClick={logout}>Logout</button>
         ) : (
@@ -55,6 +57,7 @@ const Navbar = () => {
 
         {/* Profile Dropdown */}
         <div className="relative w-10 m-5" ref={dropdownRef}>
+          <p>{user?.currentUser?.firstName}</p>
           <img
             alt="User"
             src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"

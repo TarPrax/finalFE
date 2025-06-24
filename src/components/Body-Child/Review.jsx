@@ -15,7 +15,7 @@ useEffect(() => {
       const response = await axios.get('http://localhost:4336/user/requests/received', {
         withCredentials: true,
       });
-      console.log('Review data:', response.data.data);
+      console.log('Review data:', response.data);
     } catch (error) {
       console.error('Error fetching review data:', error);
     }

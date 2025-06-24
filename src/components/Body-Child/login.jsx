@@ -18,7 +18,7 @@ const navigate =useNavigate()
         password,
       },{withCredentials: true});
     
-      console.log(res.data);
+
       dispatch(addUser(res.data));
       return navigate("/feed");
     } catch (err) {
