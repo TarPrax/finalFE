@@ -43,7 +43,7 @@ const EditUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(
+      await axios.patch(
         `http://localhost:4336/user/${currentUser._id}`,
         {
           firstName: formData.firstName,

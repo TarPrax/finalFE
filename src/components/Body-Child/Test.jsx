@@ -5,14 +5,12 @@ const Test = () => {
 
 const user = useSelector((state) => state.user);
 
-console.log(user);
+console.log(user?.currentUser?._id);
 
 
   return (
     <div>
-<p>{user?.currentUser?.firstName || "No user logged in"}</p>
-<p>{user?.currentUser?.lastName || "No user logged in"}</p> 
-<p>{user?.currentUser._id}</p>
+<p>Test</p>
 
 
 

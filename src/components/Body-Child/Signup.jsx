@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser, removeUser } from "../../Utilis/Slices/Slice";
+
 const Signup = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -35,9 +40,10 @@ const Signup = () => {
   }
 );
 
-    
+    console.log(res.data);
 
       alert("Signup successful!");
+      navigate("/requests");
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Submission failed.");

@@ -98,7 +98,7 @@ const Navbar = () => {
               <button
                 onClick={() => {
                   setDropdownOpen(false);
-                  navigate("/profile");
+                  navigate("/user/edit");
                 }}
                 className="block w-full px-4 py-2 text-left hover:bg-gray-700 hover:text-blue-400"
               >
