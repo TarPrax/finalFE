@@ -1,7 +1,8 @@
 import React from 'react';
 
 
-const RequestComponent = ({firstName,lastName,emailId,_id}) => {
+const RequestComponent = ({connectionStatus,fromUserId
+}) => {
 
 
   
@@ -12,12 +13,12 @@ const RequestComponent = ({firstName,lastName,emailId,_id}) => {
           src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
           alt="User Avatar"
           className="w-16 h-16 rounded-full mb-4"   />
-    <h2>{firstName} {lastName} Here !!</h2>
-    <h3>Email: {emailId}</h3>
+    <h2>The user is {connectionStatus}</h2>
+    <h3>From User Name: {fromUserId?.firstName}</h3>
     
     <div className="feed-item-actions mt-4">
-      <button className="btn btn-sm btn-outline" >View Profile</button>
-      <button className="btn btn-sm btn-outline ml-2">Message</button>  
+      <button className="btn btn-sm btn-success red" >Accept </button>
+      <button className="btn btn-sm btn-error ml-2">Reject</button>  
       
     </div>
     </div>

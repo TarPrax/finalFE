@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react';
 import axios from 'axios';
-import ReviewComponent from './reviewComponent';
+import RequestComponent from './requestComponent';
 
 
       
@@ -16,9 +16,9 @@ useEffect(() => {
       const response = await axios.get('http://localhost:4336/user/requests/received', {
         withCredentials: true,
       });
-      console.log('Review data:', response.data.data[0]._id);
+      console.log('Review data: 1', response.data.data);
       setReviewData(response.data.data);
-      console.log('Review data:', reviewData);
+      console.log('Review data: 2', reviewData);
     } catch (error) {
       console.error('Error fetching review data:', error);
     }
@@ -27,10 +27,26 @@ useEffect(() => {
   fetchReviewData();
 }, []);
 
+
+
   return (
     <>
-
-<ReviewComponent reviewData={reviewData[0]} />
+      <div className="flex flex-col items-center  min-h-screen bg-base-100">
+        <h1 className="text-2xl font-bold mb-4">Review Requests</h1>
+        <div className="w-full max-w-4xl">
+          {reviewData.length > 0 ? (
+            reviewData.map((item) => (
+              <RequestComponent
+                key={item._id}
+                connectionStatus={item.connectionStatus}  // Pass connectionStatus
+                fromUserId={item.fromUserId}  // Pass fromUserId separately
+              />
+            ))
+          ) : (
+            <p className="text-gray-500">No review requests available.</p>
+          )}
+        </div>
+      </div>  
 
     </>
   )
