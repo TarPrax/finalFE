@@ -14,7 +14,7 @@ useEffect(() => {
       const response = await axios.get('http://localhost:4336/user/feed', {
         withCredentials: true,
       });
-      console.log('Response data:',  response.data);
+      console.log('Response data:',  response);
       setRequests(response.data);
       console.log('Requests:', requests);
     } catch (error) {

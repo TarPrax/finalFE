@@ -4,6 +4,7 @@ import axios from 'axios';
 import { addUser } from '../../Utilis/Slices/Slice';
 import FeedComponent from './feedComponent';
 import RequestComponent from './requestComponent';
+import ConnectionComponent from './ConnectionComponent';
 
 
 const Feed = () => {
@@ -50,7 +51,7 @@ const feed = async () => {
 
   const name = currentUser?.firstName;
 
-
+  console.log('feed data:', feedData);
 
 
 
@@ -67,7 +68,7 @@ const feed = async () => {
    
       <div key={index} className="feed-item flex flex-col items-center bg-base-200 p-4 rounded-lg shadow-md mb-4 w-100 justify-center">
        
-        <RequestComponent
+        <ConnectionComponent
           firstName={item.firstName}
           lastName={item.lastName}
           emailId={item.emailId} 

@@ -24,6 +24,8 @@ useEffect(() => {
     }
   };
 
+  
+
   fetchReviewData();
 }, []);
 

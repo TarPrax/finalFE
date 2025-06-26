@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/feed",
-        element: <Feed />,
+        element: < Feed/>,
       },
       {
         path:"/requests",
