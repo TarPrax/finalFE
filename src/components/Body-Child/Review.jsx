@@ -40,6 +40,7 @@ useEffect(() => {
             reviewData.map((item) => (
               <RequestComponent
                 key={item._id}
+                _id={item._id}  // Pass _id separately
                 connectionStatus={item.connectionStatus}  // Pass connectionStatus
                 fromUserId={item.fromUserId}  // Pass fromUserId separately
               />

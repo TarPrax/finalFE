@@ -48,7 +48,7 @@ const Navbar = () => {
         <div className="flex-1">
           <a className="btn btn-ghost text-xl m-5">DevTinder🤖</a>
         </div>
-<button className="btn btn-ghost btn-sm m-2" onClick={() => navigate("/test")}>Test</button>
+<button className="btn btn-ghost btn-sm m-2" onClick={() => navigate("/signup")}>Signup</button>
         {user?.currentUser?.firstName ? (
           <button className="btn btn-ghost btn-sm m-2" onClick={logout}>Logout</button>
         ) : (

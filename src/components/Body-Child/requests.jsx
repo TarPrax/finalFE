@@ -25,7 +25,7 @@ useEffect(() => {
 },[])
   return ( <>
  
-    <div>Explore the requests</div>
+    <div>Explore your feed here !!</div>
     {requests.length > 0 ? (
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ml-4 gap-4  p-4'>
         {requests.map((item, index) => (

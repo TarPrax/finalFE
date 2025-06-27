@@ -49,8 +49,8 @@ const router = createBrowserRouter([
         {path:"user/edit",
           element:<UserEdit/>
         },
-        {path:"/test",
-          element:<Test/>
+        {path:"/signpu",
+          element:<Signup/>
         }
     ],
     errorElement: <ErrorP />,
