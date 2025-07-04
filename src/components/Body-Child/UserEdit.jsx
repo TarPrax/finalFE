@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import { endpoint } from "../endpoint"; // Adjust the import path as necessary
+import { endpoint } from "../../endpoint"; // Adjust the import path as necessary
 
 const UserEdit = () => {
 const user = useSelector((state) => state.user);
