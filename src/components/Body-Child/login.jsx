@@ -3,6 +3,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../../Utilis/Slices/Slice";
 import { useNavigate } from "react-router-dom";
+import { endpoint } from "../../endpoint"; // Adjust the import path as necessary
 
 const Login = () => {
 const navigate =useNavigate()
@@ -13,7 +14,7 @@ const navigate =useNavigate()
     e.preventDefault();
     console.log("hit");
     try {
-      const res = await axios.post("http://localhost:4336/login", {
+      const res = await axios.post(`${endpoint}/login`, {
         emailId,
         password,
       },{withCredentials: true});

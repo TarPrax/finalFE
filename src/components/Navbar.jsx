@@ -4,7 +4,7 @@ import axios from "axios";
 import { removeUser } from "../Utilis/Slices/Slice";
 import { useNavigate } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
-
+import { endpoint } from "../endpoint";
 const Navbar = () => {
   const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -13,7 +13,7 @@ const Navbar = () => {
   const logout = () => {
     const logoutUser = async () => {
       try {
-        const userLog = await axios.post("http://localhost:4336/logout", {}, { withCredentials: true });
+        const userLog = await axios.post(`${endpoint}/logout`, {}, { withCredentials: true });
         if (userLog) {
           store.dispatch(removeUser());
           console.log("User logged out successfully");

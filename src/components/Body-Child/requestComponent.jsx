@@ -1,5 +1,6 @@
 import React, { use, useEffect } from 'react';
 import axios from 'axios';
+import { endpoint } from '../../endpoint'; // Adjust the import path as necessary
 
 
 const RequestComponent = ({connectionStatus,fromUserId,_id
@@ -9,7 +10,7 @@ const RequestComponent = ({connectionStatus,fromUserId,_id
 async function handleClick(status) {
    try 
    {
- const response = await axios.post(`http://localhost:4336/requests/review/${status}/${_id}`, {}, {
+ const response = await axios.post(`${endpoint}/requests/review/${status}/${_id}`, {}, {
       withCredentials: true,
    });
    console.log(response);

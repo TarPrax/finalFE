@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import axios from 'axios';
 import RequestComponent from './requestComponent';
+import { endpoint } from '../../endpoint'; // Adjust the import path as necessary
 
 
       
@@ -13,7 +14,7 @@ const[reviewData, setReviewData] = useState([]);
 useEffect(() => {
   const fetchReviewData = async () => {
     try {
-      const response = await axios.get('http://localhost:4336/user/requests/received', {
+      const response = await axios.get(`${endpoint}/user/requests/received`, {
         withCredentials: true,
       });
       console.log('Review data: 1', response.data.data);

@@ -5,6 +5,7 @@ import { addUser } from '../../Utilis/Slices/Slice';
 import FeedComponent from './feedComponent';
 import RequestComponent from './requestComponent';
 import ConnectionComponent from './ConnectionComponent';
+import { endpoint } from '../../endpoint'; // Adjust the import path as necessary
 
 
 const Feed = () => {
@@ -18,7 +19,7 @@ const Feed = () => {
     const fetchUser = async () => {
       if (!currentUser) {
         try {
-          const response = await axios.get('http://localhost:4336/isUserLoggedIn', {
+          const response = await axios.get(`${endpoint}/isUserLoggedIn`, {
             withCredentials: true,
           });
           dispatch(addUser(response.data)); // assuming response.data contains user
@@ -35,7 +36,7 @@ const Feed = () => {
   useEffect(()=>{
 const feed = async () => {
   try {
-    const response = await axios.get('http://localhost:4336/user/connections', {
+    const response = await axios.get(`${endpoint}/user/connections`, {
       withCredentials: true,
     });
     console.log('Feed data:', response?.data?.data);

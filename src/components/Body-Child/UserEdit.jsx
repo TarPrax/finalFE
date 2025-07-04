@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
-
+import { endpoint } from "../endpoint"; // Adjust the import path as necessary
 
 const UserEdit = () => {
 const user = useSelector((state) => state.user);
@@ -16,7 +16,7 @@ const handleSubmit = async (e) => {
   e.preventDefault(); 
 console.log("Form submitted with data:", formData);
   try {
-    const response = await axios.patch(`http://localhost:4336/user/${user?.currentUser?._id}`, formData, {
+    const response = await axios.patch(`${endpoint}/user/${user?.currentUser?._id}`, formData, {
       withCredentials: true,
     });
     console.log("Response from server:", response.data);

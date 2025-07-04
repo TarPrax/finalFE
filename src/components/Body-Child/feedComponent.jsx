@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { endpoint } from '../../endpoint'; // Adjust the import path as necessary
 
 const FeedComponent = ({firstName,lastName,emailId,_id}) => {
 
 const [Message, setMessage] = useState(''); 
   async function handleConn(status){
-  
-const user = await axios.post(`http://localhost:4336/newConnectionRequest/${status}/${_id}`,{},
+
+const user = await axios.post(`${endpoint}/newConnectionRequest/${status}/${_id}`,{},
   {withCredentials: true})
 console.log(user);
 setMessage(status);

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../../Utilis/Slices/Slice";
+import { endpoint } from "../../endpoint"; // Adjust the import path as necessary
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-  "http://localhost:4336/signup",
+  `${endpoint}/signup`,
   {
     firstName: formData.firstName,
     lastName: formData.lastName,

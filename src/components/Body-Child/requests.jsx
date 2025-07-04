@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';  
 import FeedComponent from './feedComponent';
-
+import { endpoint } from '../../endpoint'; // Adjust the import path as necessary
 
 
 const Requests = () => {
@@ -11,7 +11,7 @@ const [requests, setRequests] = useState([]);
 useEffect(() => {
   const fetchRequests = async () => {
     try {
-      const response = await axios.get('http://localhost:4336/user/feed', {
+      const response = await axios.get(`${endpoint}/user/feed`, {
         withCredentials: true,
       });
       console.log('Response data:',  response);
