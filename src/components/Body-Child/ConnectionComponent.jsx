@@ -1,4 +1,7 @@
-import React from 'react';
+ import React from 'react';     
+import { useNavigate } from 'react-router-dom';
+import { endpoint } from '../../endpoint'; // Adjust the import path as necessary 
+
 
 
 const ConnectionComponent = ({firstName,
@@ -6,9 +9,12 @@ const ConnectionComponent = ({firstName,
           emailId,
             _id
 }) => {
-
-
-  
+const navigate = useNavigate();
+function callChat(userId) {
+  console.log("Chat with user ID:", userId);
+  // Navigate to the chat page with the user ID
+  navigate(`/chat/${userId}`);
+} 
 
   return ( 
     <div className="feed-item bg-base-200 p-4 rounded-lg shadow-md mb-4 w-100">
@@ -22,7 +28,7 @@ const ConnectionComponent = ({firstName,
     
     <div className="feed-item-actions mt-4">
       <button className="btn btn-sm btn-success red" > View Profile</button>
-      <button className="btn btn-sm btn-error ml-2">Message</button>
+      <button className="btn btn-sm btn-error ml-2" onClick={()=> callChat(_id)}>Message</button>
       
       
     </div>

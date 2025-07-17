@@ -15,6 +15,7 @@ import Review from "./components/Body-Child/Review.jsx";
 import Signup from "./components/Body-Child/Signup.jsx";
 import UserEdit from "./components/Body-Child/UserEdit.jsx";
 import Test from "./components/Body-Child/Test.jsx";
+import Chat from "./Chat/chat.jsx";
 
 const router = createBrowserRouter([
   { path:" ",
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
         },
         {path:"/signpu",
           element:<Signup/>
+        },
+        {
+          path:"/chat/:userId",
+          element:<Chat/>
         }
     ],
     errorElement: <ErrorP />,
